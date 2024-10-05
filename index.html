@@ -1,67 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/squarespace-logo_icon-icons.com_57069.ico">
     <link href="/src/output.css" rel="stylesheet">
-    <title>Startup de Contabilidade</title>
+    <title>Contabilis</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
-
 <body class="bg-gray-200">
     <!-- Header -->
-    <header class="bg-white shadow-lg">
-        <div class="container ml-2 flex justify-between items-center py-6">
-            <div class="text-2xl font-bold">Logo da Startup</div>
-            <nav class="space-x-6 hidden md:block">
-                <a href="#services" class="hover:text-blue-500">Serviços</a>
-                <a href="#about" class="hover:text-blue-500">Sobre Nós</a>
-                <a href="#contact" class="hover:text-blue-500">Contato</a>
+    <header class="bg-gray-800 text-gray-200 shadow-lg relative z-50">
+        <div class="container mx-auto flex justify-between items-center py-6">
+            <div class="flex items-center">
+                <img src="squarespace_socialnetwork_20673.png" alt="Logo Contabilis" class="h-10 w-10 mr-2">
+                <div class="text-2xl font-bold">Contabilis</div>
+            </div>
+            <!-- Mobile menu button -->
+            <button id="menu-toggle" class="text-gray-200 block md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+
+            <!-- Desktop navigation -->
+            <nav class="hidden md:block space-x-6">
+                <ul class="flex space-x-6">
+                    <li><a href="#services" class="text-gray-200 hover:text-gray-500">Serviços</a></li>
+                    <li><a href="#about" class="text-gray-200 hover:text-gray-500">Sobre Nós</a></li>
+                    <li><a href="#contact" class="text-gray-200 hover:text-gray-500">Contato</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
+    <!-- Dropdown Menu for Mobile -->
+    <div id="overlay-menu" class="absolute right-2 bg-gray-800 text-gray-200 rounded-lg shadow-lg hidden z-50 w-48">
+        <nav class="text-center py-4">
+            <ul class="space-y-4">
+                <li><a href="#services" class="block py-2 hover:text-gray-400">Serviços</a></li>
+                <li><a href="#about" class="block py-2 hover:text-gray-400">Sobre Nós</a></li>
+                <li><a href="#contact" class="block py-2 hover:text-gray-400">Contato</a></li>
+            </ul>
+        </nav>
+    </div>
+
     <!-- Hero Section -->
-    <section class="bg-gray-100 h-screen flex items-center">
-        <div class="container mx-auto flex flex-col-reverse md:flex-row items-center justify-between h-full">
-            <!-- Texto e Botão na Esquerda -->
-            <div class="text-center md:text-left md:w-1/2 p-4">
-                <h1 class="text-3xl md:text-5xl font-bold text-gray-800">Soluções contábeis para o seu negócio</h1>
-                <p class="text-lg md:text-xl text-gray-600 mt-4">Eficiência, transparência e resultados garantidos.</p>
-                <a href="#contact" class="mt-6 inline-block bg-blue-600 text-white py-3 px-6 rounded-lg">Entre em Contato</a>
-            </div>
-            <!-- Imagem na Direita com Altura Completa -->
-            <div class="md:w-1/2 h-full">
-                <img src="https://media.gazetadopovo.com.br/2024/04/26200754/img_texto_06-960x540.jpg" alt="Imagem de Soluções Contábeis" class="w-full h-full object-cover">
-            </div>
+    <section class="relative bg-gray-100 h-screen flex items-center justify-start">
+        <img src="https://media.gazetadopovo.com.br/2024/04/26200754/img_texto_06-960x540.jpg" 
+            alt="Imagem de Soluções Contábeis" 
+            class="absolute inset-0 w-full h-full object-cover z-0">
+        <div class="relative z-10 mt-6 bg-white bg-opacity-90 p-8 rounded-lg text-center md:text-left">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800">Soluções contábeis para o seu negócio</h1>
+            <p class="text-lg md:text-xl text-gray-600 mt-4">Eficiência, transparência e resultados garantidos.</p>
+            <a href="#contact" class="mt-6 inline-block bg-blue-600 text-white py-3 px-6 rounded-lg">Entre em Contato</a>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-16 bg-gray-200">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-8">Nossos Serviços</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Serviço 1 -->
-                <div class="bg-white shadow-lg p-6 rounded-lg">
-                    <img src="planejamento-tributario.webp" alt="Planejamento Tributário"
-                        class="w-full h-40 object-cover rounded-t-lg mb-4">
-                    <h3 class="text-2xl font-semibold mb-4">Planejamento Tributário</h3>
-                    <p>Estratégias para otimizar sua carga tributária.</p>
-                </div>
-                <!-- Serviço 2 -->
-                <div class="bg-white shadow-lg p-6 rounded-lg">
-                    <img src="auditoria.jpg" alt="Auditoria" class="w-full h-40 object-cover rounded-t-lg mb-4">
-                    <h3 class="text-2xl font-semibold mb-4">Auditoria</h3>
-                    <p>Verificação de conformidade financeira e fiscal.</p>
-                </div>
-                <!-- Serviço 3 -->
-                <div class="bg-white shadow-lg p-6 rounded-lg">
-                    <img src="consultoria-financeira.png" alt="Consultoria Financeira"
-                        class="w-full h-40 object-cover rounded-t-lg mb-4">
-                    <h3 class="text-2xl font-semibold mb-4">Consultoria Financeira</h3>
-                    <p>Orientação para tomada de decisões estratégicas.</p>
+    <!-- Services Section (Carrossel) -->
+    <section id="services" class="py-16 bg-gray-800 relative">
+        <div class="absolute inset-0 bg-gray-800 z-0"></div>
+        <div class="relative z-10 container mx-auto text-center">
+            <h2 class="text-4xl font-bold text-white mb-12">Nossos Serviços</h2>
+            <div class="relative">
+                <div class="swiper mySwiper relative">
+                    <div class="swiper-wrapper">
+                        <!-- Serviço 1 -->
+                        <div class="swiper-slide flex justify-center items-center">
+                            <div class="bg-white shadow-lg p-8 rounded-lg w-full md:w-3/5 transform hover:scale-105 transition duration-300">
+                                <img src="/planejamento-tributario.webp" alt="Planejamento Tributário" class="w-full h-56 object-cover rounded-t-lg mb-4">
+                                <h3 class="text-3xl font-semibold mb-4">Planejamento Tributário</h3>
+                                <p class="text-lg text-gray-600">Estratégias para otimizar sua carga tributária.</p>
+                            </div>
+                        </div>
+                        <!-- Serviço 2 -->
+                        <div class="swiper-slide flex justify-center items-center">
+                            <div class="bg-white shadow-lg p-8 rounded-lg w-full md:w-3/5 transform hover:scale-105 transition duration-300">
+                                <img src="/auditoria.jpg" alt="Auditoria" class="w-full h-56 object-cover rounded-t-lg mb-4">
+                                <h3 class="text-3xl font-semibold mb-4">Auditoria</h3>
+                                <p class="text-lg text-gray-600">Verificação de conformidade financeira e fiscal.</p>
+                            </div>
+                        </div>
+                        <!-- Serviço 3 -->
+                        <div class="swiper-slide flex justify-center items-center">
+                            <div class="bg-white shadow-lg p-8 rounded-lg w-full md:w-3/5 transform hover:scale-105 transition duration-300">
+                                <img src="/consultoria-financeira.png" alt="Consultoria Financeira" class="w-full h-56 object-cover rounded-t-lg mb-4">
+                                <h3 class="text-3xl font-semibold mb-4">Consultoria Financeira</h3>
+                                <p class="text-lg text-gray-600">Orientação para tomada de decisões estratégicas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Botões de navegação -->
+                    <div class="swiper-button-next text-white"></div>
+                    <div class="swiper-button-prev text-white"></div>
                 </div>
             </div>
         </div>
@@ -69,9 +102,9 @@
 
     <!-- About Us Section -->
     <section id="about" class="py-16">
-        <div class="container flex flex-col md:flex-row items-center">
-            <img src="equipe.jpg" alt="Equipe" class="w-full md:w-1/2 rounded-lg shadow-lg mb-8 md:mb-0">
-            <div class="md:ml-12 ml-2">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <img src="/equipe.jpg" alt="Equipe" class="w-full md:w-1/2 rounded-lg shadow-lg">
+            <div class="md:ml-12 mt-8 md:mt-0">
                 <h2 class="text-3xl font-bold mb-4">Sobre Nós</h2>
                 <p>Somos uma startup focada em oferecer soluções contábeis inovadoras para pequenas e médias empresas. Nossa missão é fornecer um serviço eficiente e personalizado, ajudando nossos clientes a alcançarem o sucesso.</p>
             </div>
@@ -82,7 +115,13 @@
     <section id="contact" class="py-16 bg-gray-200">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold mb-8">Fale Conosco</h2>
-            <form action="#" method="POST" class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg">
+            <form id="contact-form" class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <!-- Esconder o campo honeypot para evitar spam -->
+                <input type="hidden" name="_honey" style="display:none;">
+                <!-- Evitar que o mesmo usuário envie múltiplos formulários -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="">
+    
                 <div class="mb-4">
                     <label for="name" class="block text-left mb-2">Nome</label>
                     <input type="text" id="name" name="name" class="w-full p-2 border border-gray-300 rounded-lg" required>
@@ -97,16 +136,68 @@
                 </div>
                 <button type="submit" class="bg-blue-600 text-white py-2 px-6 rounded-lg">Enviar</button>
             </form>
+    
+            <!-- Notificação de sucesso -->
+            <div id="success-notification" class="hidden text-green-600 mt-4">
+                Formulário enviado com sucesso!
+            </div>
         </div>
     </section>
-
+    
     <!-- Footer -->
     <footer class="bg-gray-800 text-gray-200 py-4">
         <div class="container mx-auto text-center">
-            <p>&copy; 2024 Contabil. Todos os direitos reservados.</p>
+            <p>&copy; 2024 Contabilis. Todos os direitos reservados.</p>
             <p>Feito por <a href="https://github.com/Tiago-gl" class="text-blue-400">Tiago Gomes</a></p>
         </div>
     </footer>
-</body>
 
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+    const swiper = new Swiper(".mySwiper", {
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const overlayMenu = document.getElementById('overlay-menu');
+
+    menuToggle.addEventListener('click', () => {
+        overlayMenu.classList.toggle('hidden');
+    });
+
+    // Form submission and success message display
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evitar o comportamento padrão de recarregar a página
+
+    // Coletar os dados do formulário
+    const formData = new FormData(this);
+
+    // Enviar os dados usando AJAX
+    fetch('https://formsubmit.co/tiagglo7@gmail.com', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => {
+        if (response.ok) {
+            // Mostrar notificação de sucesso
+            document.getElementById('success-notification').classList.remove('hidden');
+            // Limpar os campos do formulário após o envio
+            document.getElementById('contact-form').reset();
+        } else {
+            // Tratar erros, se necessário
+            alert('Houve um erro ao enviar o formulário. Tente novamente mais tarde.');
+        }
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+        alert('Ocorreu um erro. Por favor, tente novamente.');
+    });
+});
+    </script>
+</body>
 </html>
