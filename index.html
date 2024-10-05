@@ -70,7 +70,8 @@
                         <!-- Serviço 1 -->
                         <div class="swiper-slide flex justify-center items-center">
                             <div class="bg-white shadow-lg p-8 rounded-lg w-full md:w-3/5 transform hover:scale-105 transition duration-300">
-                                <img src="/planejamento-tributario.webp" alt="Planejamento Tributário" class="w-full h-56 object-cover rounded-t-lg mb-4">
+                                <img src="https://i0.wp.com/liberius.com.br/wp-content/uploads/2022/07/planejamento-tributario.png?fit=1360%2C907&ssl=1"
+                                    alt="Planejamento Tributário" class="w-full h-56 object-cover rounded-t-lg mb-4">
                                 <h3 class="text-3xl font-semibold mb-4">Planejamento Tributário</h3>
                                 <p class="text-lg text-gray-600">Estratégias para otimizar sua carga tributária.</p>
                             </div>
@@ -78,7 +79,8 @@
                         <!-- Serviço 2 -->
                         <div class="swiper-slide flex justify-center items-center">
                             <div class="bg-white shadow-lg p-8 rounded-lg w-full md:w-3/5 transform hover:scale-105 transition duration-300">
-                                <img src="/auditoria.jpg" alt="Auditoria" class="w-full h-56 object-cover rounded-t-lg mb-4">
+                                <img src="https://www.afixcode.com.br/wp-content/uploads/2022/10/Destacada-auditoria-externa-788x480.jpg" 
+                                    alt="Auditoria" class="w-full h-56 object-cover rounded-t-lg mb-4">
                                 <h3 class="text-3xl font-semibold mb-4">Auditoria</h3>
                                 <p class="text-lg text-gray-600">Verificação de conformidade financeira e fiscal.</p>
                             </div>
@@ -86,7 +88,8 @@
                         <!-- Serviço 3 -->
                         <div class="swiper-slide flex justify-center items-center">
                             <div class="bg-white shadow-lg p-8 rounded-lg w-full md:w-3/5 transform hover:scale-105 transition duration-300">
-                                <img src="/consultoria-financeira.png" alt="Consultoria Financeira" class="w-full h-56 object-cover rounded-t-lg mb-4">
+                                <img src="https://www.ifinance.com.br/wp-content/uploads/2021/05/consultoria-financeira-1024x683.jpg" 
+                                    alt="Consultoria Financeira" class="w-full h-56 object-cover rounded-t-lg mb-4">
                                 <h3 class="text-3xl font-semibold mb-4">Consultoria Financeira</h3>
                                 <p class="text-lg text-gray-600">Orientação para tomada de decisões estratégicas.</p>
                             </div>
@@ -103,7 +106,8 @@
     <!-- About Us Section -->
     <section id="about" class="py-16">
         <div class="container mx-auto flex flex-col md:flex-row items-center">
-            <img src="/equipe.jpg" alt="Equipe" class="w-full md:w-1/2 rounded-lg shadow-lg">
+            <img src="https://www.idebrasil.com.br/blog/wp-content/uploads/2019/10/conheca-4-habilidades-para-trabalhar-em-equipe-fundamentais-850x441.jpg" 
+                alt="Equipe" class="w-full md:w-1/2 rounded-lg shadow-lg">
             <div class="md:ml-12 mt-8 md:mt-0">
                 <h2 class="text-3xl font-bold mb-4">Sobre Nós</h2>
                 <p>Somos uma startup focada em oferecer soluções contábeis inovadoras para pequenas e médias empresas. Nossa missão é fornecer um serviço eficiente e personalizado, ajudando nossos clientes a alcançarem o sucesso.</p>
@@ -143,7 +147,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Footer -->
     <footer class="bg-gray-800 text-gray-200 py-4">
         <div class="container mx-auto text-center">
@@ -168,6 +172,14 @@
 
     menuToggle.addEventListener('click', () => {
         overlayMenu.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', (event) => {
+        const isClickInside = overlayMenu.contains(event.target) || menuToggle.contains(event.target);
+
+        if (!isClickInside && !overlayMenu.classList.contains('hidden')) {
+            overlayMenu.classList.add('hidden');
+        }
     });
 
     // Form submission and success message display
