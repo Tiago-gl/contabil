@@ -119,13 +119,9 @@
     <section id="contact" class="py-16 bg-gray-200">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold mb-8">Fale Conosco</h2>
-            <form id="contact-form" class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg">
-                <!-- Esconder o campo honeypot para evitar spam -->
-                <input type="hidden" name="_honey" style="display:none;">
-                <!-- Evitar que o mesmo usuário envie múltiplos formulários -->
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="">
-    
+            <form id="contact-form" class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg" 
+                  action="https://formsubmit.co/tiagglo7@gmail.com" method="POST">
+                  
                 <div class="mb-4">
                     <label for="name" class="block text-left mb-2">Nome</label>
                     <input type="text" id="name" name="name" class="w-full p-2 border border-gray-300 rounded-lg" required>
@@ -138,6 +134,11 @@
                     <label for="message" class="block text-left mb-2">Mensagem</label>
                     <textarea id="message" name="message" rows="4" class="w-full p-2 border border-gray-300 rounded-lg" required></textarea>
                 </div>
+    
+                <!-- Campos ocultos para FormSubmit -->
+                <input type="hidden" name="_next" value="https://tiago-gl.github.io/contabil/">
+                <input type="hidden" name="_captcha" value="false">
+    
                 <button type="submit" class="bg-blue-600 text-white py-2 px-6 rounded-lg">Enviar</button>
             </form>
     
@@ -183,33 +184,10 @@
     });
 
     // Form submission and success message display
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evitar o comportamento padrão de recarregar a página
-
-    // Coletar os dados do formulário
-    const formData = new FormData(this);
-
-    // Enviar os dados usando AJAX
-    fetch('https://formsubmit.co/tiagglo7@gmail.com', {
-        method: 'POST',
-        body: formData,
-    })
-    .then(response => {
-        if (response.ok) {
-            // Mostrar notificação de sucesso
-            document.getElementById('success-notification').classList.remove('hidden');
-            // Limpar os campos do formulário após o envio
-            document.getElementById('contact-form').reset();
-        } else {
-            // Tratar erros, se necessário
-            alert('Houve um erro ao enviar o formulário. Tente novamente mais tarde.');
-        }
-    })
-    .catch(error => {
-        console.error('Erro:', error);
-        alert('Ocorreu um erro. Por favor, tente novamente.');
+    document.getElementById('contact-form').addEventListener('submit', function() {
+        // Mostrar a notificação de sucesso
+        document.getElementById('success-notification').classList.remove('hidden');
     });
-});
     </script>
 </body>
 </html>
